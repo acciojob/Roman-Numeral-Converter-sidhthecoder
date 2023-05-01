@@ -8,21 +8,13 @@ function convertToRoman(num) {
       5:['V', 5], 
       6:['I', 1]
     };
-    let romanNumeral = "";
+   let romanNumeral = "";
 
-    for (let key in obj) {
-	  if (num >= obj[key][1] && obj[key][0].length === 2) {
-	    romanNumeral += obj[key][0];
-	    num -= obj[key][1];
-	}
-
-	while (num >= obj[key][1]) {
-	  romanNumeral += obj[key][0];
-	  num -= obj[key][1];
-	}
-  }
-
-  return romanNumeral;
+  for (let key in obj) {
+    while (num >= obj[key][1]) {
+      romanNumeral += obj[key][0];
+      num -= obj[key][1];
+    }
   }
 
   return romanNumeral;
